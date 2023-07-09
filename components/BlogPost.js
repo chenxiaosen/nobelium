@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useConfig } from '@/lib/config'
 import FormattedDate from '@/components/FormattedDate'
+import TagItem from './TagItem'
 
 const BlogPost = ({ post }) => {
   const BLOG = useConfig()
@@ -17,13 +18,11 @@ const BlogPost = ({ post }) => {
           </time>
         </header>
         <main>
-          {post.tags && (
-            <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
-              {post.tags.map(tag => (
-                <TagItem key={tag} tag={tag} />
-              ))}
-            </div>
-          )}
+          {post.tags &&
+            post.tags.map(tag => (
+              <TagItem key={tag} tag={tag} />
+            ))
+          }
           <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
             {post.summary}
           </p>
