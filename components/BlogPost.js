@@ -17,6 +17,15 @@ const BlogPost = ({ post }) => {
           </time>
         </header>
         <main>
+          {post.tags && (
+            <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
+              {post.tags.map(tag => (
+                <p className="mr-1 rounded-full px-2 py-1 border leading-none text-sm dark:border-gray-600">
+                  {tag}
+                </p>
+              ))}
+            </div>
+          )}
           <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
             {post.summary}
           </p>
