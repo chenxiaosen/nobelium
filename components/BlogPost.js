@@ -20,9 +20,7 @@ const BlogPost = ({ post }) => {
           {post.tags && (
             <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
               {post.tags.map(tag => (
-                <p className="mr-1 rounded-full px-2 py-1 border leading-none text-sm dark:border-gray-600">
-                  {tag}
-                </p>
+                <TagItem key={tag} tag={tag} />
               ))}
             </div>
           )}
