@@ -17,18 +17,10 @@ const BlogPost = ({ post }) => {
             <FormattedDate date={post.date} />
           </time>
         </header>
-        <main className="flex flex-col justify-between md:flex-row md:items-baseline">
-
+        <main>
           <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
             {post.summary}
           </p>
-          {post.tags &&
-            post.tags.map(tag => (
-              <p key={tag} className="mr-1 rounded-full px-2 py-1 border leading-none text-sm dark:border-gray-600">
-                {tag}
-              </p>
-            ))
-          }
         </main>
       </article>
     </Link>
