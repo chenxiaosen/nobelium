@@ -20,7 +20,9 @@ const BlogPost = ({ post }) => {
         <main>
           {post.tags &&
             post.tags.map(tag => (
-              <TagItem key={tag} tag={tag} />
+              <p key={tag} className="mr-1 rounded-full px-2 py-1 border leading-none text-sm dark:border-gray-600">
+                {tag}
+              </p>
             ))
           }
           <p className="hidden md:block leading-8 text-gray-700 dark:text-gray-300">
